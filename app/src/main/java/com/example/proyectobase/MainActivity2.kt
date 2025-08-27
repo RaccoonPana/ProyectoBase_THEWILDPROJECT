@@ -19,6 +19,7 @@ class MainActivity2 : AppCompatActivity() {
         val txbienvenida:TextView = findViewById(R.id.tx_bienvenido)
         val ususarioDesdeOtroactivity = intent.getStringExtra("Sesion_usuario")
         val btn_cambiar:Button = findViewById(R.id.btn_cambio)
+        val btn_calcu:Button = findViewById(R.id.btn_calc)
         txbienvenida.text = ususarioDesdeOtroactivity.toString()
 
         btn_Volver.setOnClickListener {
@@ -29,6 +30,11 @@ class MainActivity2 : AppCompatActivity() {
             val cambiarVentana = Intent(this,MainActivity3::class.java)
             startActivity(cambiarVentana)
         }
+        btn_calcu.setOnClickListener{
+            val ventanaCalc = Intent(this,Calculadora::class.java)
+            startActivity(ventanaCalc)
+        }
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
